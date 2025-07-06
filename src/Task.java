@@ -51,4 +51,27 @@ public class Task {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public Task clone() {
+        Task clonedTask = new Task(this.id, this.name, this.description);
+        clonedTask.setStatus(this.status);
+        return clonedTask;
+    }
 }
