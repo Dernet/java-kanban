@@ -13,12 +13,12 @@ class SubtaskTest {
 
     @Test
     public void testSubtaskCannotBeItsOwnEpic() {
-        Epic epic = new Epic(1, "Epic", "Description");
-        Subtask invalidSubtask = new Subtask(2, "Subtask", "Desc", epic.getId());
+        Subtask subtask = new Subtask(1, "name", "decr",1);
+
+        subtask.setId(1);
 
         assertThrows(IllegalArgumentException.class, () -> {
-            manager.addSubtask(invalidSubtask);
+            manager.addSubtask(subtask);
         });
     }
-
 }
